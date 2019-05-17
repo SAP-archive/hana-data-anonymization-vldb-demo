@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="VLDBDemo.db::HRDB_VIEW_DIFF_PRIV" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="HRDB_VIEW_DIFF_PRIV"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="VLDBDemo.db::tables.HRDB_TABLE">
+    <resourceUri>VLDBDemo.db::tables.HRDB_TABLE</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:AnonymizeView" id="HRDB_VIEW_DIFF_PRIV" method="differentialPrivacy">
+    <viewAttributes>
+      <viewAttribute id="TUPLE_ID">
+        <descriptions defaultDescription="TUPLE_ID"/>
+      </viewAttribute>
+      <viewAttribute id="NAME">
+        <descriptions defaultDescription="NAME"/>
+      </viewAttribute>
+      <viewAttribute id="START_YEAR">
+        <descriptions defaultDescription="START_YEAR"/>
+      </viewAttribute>
+      <viewAttribute id="ZIP_CODE">
+        <descriptions defaultDescription="ZIP_CODE"/>
+      </viewAttribute>
+      <viewAttribute id="GENDER">
+        <descriptions defaultDescription="GENDER"/>
+      </viewAttribute>
+      <viewAttribute id="EDUCATION">
+        <descriptions defaultDescription="EDUCATION"/>
+      </viewAttribute>
+      <viewAttribute id="SALARY">
+        <descriptions defaultDescription="SALARY"/>
+      </viewAttribute>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="VLDBDemo.db::tables.HRDB_TABLE">
+      <mapping xsi:type="Calculation:AttributeMapping" target="TUPLE_ID" source="TUPLE_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME" source="NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="START_YEAR" source="START_YEAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZIP_CODE" source="ZIP_CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GENDER" source="GENDER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EDUCATION" source="EDUCATION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SALARY" source="SALARY"/>
+    </input>
+    <anonymizeParameterization>
+      <seqColumn>TUPLE_ID</seqColumn>
+      <epsilon>0.5</epsilon>
+      <sensitivity>165961</sensitivity>
+      <noisedColumn>SALARY</noisedColumn>
+    </anonymizeParameterization>
+  </calculationView>
+</calculationViews>
+<logicalModel id="HRDB_VIEW_DIFF_PRIV">
+  <attributes>
+    <attribute id="START_YEAR" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="START_YEAR"/>
+      <keyMapping columnObjectName="HRDB_VIEW_DIFF_PRIV" columnName="START_YEAR"/>
+    </attribute>
+    <attribute id="ZIP_CODE" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZIP_CODE"/>
+      <keyMapping columnObjectName="HRDB_VIEW_DIFF_PRIV" columnName="ZIP_CODE"/>
+    </attribute>
+    <attribute id="GENDER" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GENDER"/>
+      <keyMapping columnObjectName="HRDB_VIEW_DIFF_PRIV" columnName="GENDER"/>
+    </attribute>
+    <attribute id="EDUCATION" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EDUCATION"/>
+      <keyMapping columnObjectName="HRDB_VIEW_DIFF_PRIV" columnName="EDUCATION"/>
+    </attribute>
+    <attribute id="SALARY" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SALARY"/>
+      <keyMapping columnObjectName="HRDB_VIEW_DIFF_PRIV" columnName="SALARY"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="HRDB_VIEW_DIFF_PRIV" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="209"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

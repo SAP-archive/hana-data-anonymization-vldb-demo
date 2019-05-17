@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="VLDBDemo.db::HRDB_VIEW_KANON" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription=""/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="VLDBDemo.db::tables.HRDB_TABLE">
+    <resourceUri>VLDBDemo.db::tables.HRDB_TABLE</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:AnonymizeView" id="HRDB_VIEW_K_ANON" method="kAnonymity">
+    <viewAttributes>
+      <viewAttribute id="TUPLE_ID">
+        <descriptions defaultDescription="TUPLE_ID"/>
+      </viewAttribute>
+      <viewAttribute id="NAME">
+        <descriptions defaultDescription="NAME"/>
+      </viewAttribute>
+      <viewAttribute id="START_YEAR">
+        <descriptions defaultDescription="START_YEAR"/>
+      </viewAttribute>
+      <viewAttribute id="ZIP_CODE">
+        <descriptions defaultDescription="ZIP_CODE"/>
+      </viewAttribute>
+      <viewAttribute id="GENDER">
+        <descriptions defaultDescription="GENDER"/>
+      </viewAttribute>
+      <viewAttribute id="EDUCATION">
+        <descriptions defaultDescription="EDUCATION"/>
+      </viewAttribute>
+      <viewAttribute id="SALARY">
+        <descriptions defaultDescription="SALARY"/>
+      </viewAttribute>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="VLDBDemo.db::tables.HRDB_TABLE">
+      <mapping xsi:type="Calculation:AttributeMapping" target="TUPLE_ID" source="TUPLE_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME" source="NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="START_YEAR" source="START_YEAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZIP_CODE" source="ZIP_CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GENDER" source="GENDER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EDUCATION" source="EDUCATION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SALARY" source="SALARY"/>
+    </input>
+    <anonymizeParameterization>
+      <seqColumn>TUPLE_ID</seqColumn>
+      <k>10</k>
+      <qidColumn id="START_YEAR"/>
+      <qidColumn id="ZIP_CODE"/>
+      <qidColumn id="GENDER"/>
+      <qidColumn id="EDUCATION"/>
+      <qidColumnHierarchy id="START_YEAR">1977;1976-1980;*1978;1976-1980;*1979;1976-1980;*1980;1976-1980;*1981;1981-1985;*1982;1981-1985;*1983;1981-1985;*1984;1981-1985;*1985;1981-1985;*1986;1986-1990;*1987;1986-1990;*1988;1986-1990;*1989;1986-1990;*1990;1986-1990;*1991;1991-1995;*1992;1991-1995;*1993;1991-1995;*1994;1991-1995;*1995;1991-1995;*1996;1996-2000;*1997;1996-2000;*1998;1996-2000;*1999;1996-2000;*2000;1996-2000;*2001;2001-2005;*2002;2001-2005;*2003;2001-2005;*2004;2001-2005;*2005;2001-2005;*2006;2006+;*2007;2006+;*2008;2006+;*2009;2006+;*2010;2006+;*2011;2006+;*2012;2006+;*2013;2006+;*2014;2006+;*2015;2006+;*2016;2006+;*2017;2006+;*</qidColumnHierarchy>
+      <qidColumnHierarchy id="ZIP_CODE">4004;40xx;4xxx;*4005;40xx;4xxx;*4006;40xx;4xxx;*4104;41xx;4xxx;*4105;41xx;4xxx;*4106;41xx;4xxx;*4204;42xx;4xxx;*4205;42xx;4xxx;*4206;42xx;4xxx;*5006;50xx;5xxx;*5007;50xx;5xxx;*5008;50xx;5xxx;*5106;51xx;5xxx;*5107;51xx;5xxx;*5108;51xx;5xxx;*5206;52xx;5xxx;*5207;52xx;5xxx;*5208;52xx;5xxx;*6002;60xx;6xxx;*6003;60xx;6xxx;*6004;60xx;6xxx;*6102;61xx;6xxx;*6103;61xx;6xxx;*6104;61xx;6xxx;*6202;62xx;6xxx;*6203;62xx;6xxx;*6204;62xx;6xxx;*7002;70xx;7xxx;*7003;70xx;7xxx;*7004;70xx;7xxx;*7102;71xx;7xxx;*7103;71xx;7xxx;*7104;71xx;7xxx;*7202;72xx;7xxx;*7203;72xx;7xxx;*7204;72xx;7xxx;*8002;80xx;8xxx;*8003;80xx;8xxx;*8004;80xx;8xxx;*8102;81xx;8xxx;*8103;81xx;8xxx;*8104;81xx;8xxx;*8202;82xx;8xxx;*8203;82xx;8xxx;*8204;82xx;8xxx;*9002;90xx;9xxx;*9003;90xx;9xxx;*9004;90xx;9xxx;*9102;91xx;9xxx;*9103;91xx;9xxx;*9104;91xx;9xxx;*9202;92xx;9xxx;*9203;92xx;9xxx;*9204;92xx;9xxx;*</qidColumnHierarchy>
+      <qidColumnHierarchy id="GENDER">f;*m;*</qidColumnHierarchy>
+      <qidColumnHierarchy id="EDUCATION">9th-12th;High School;Secondary Ed;*Assoc-acdm;Professional Ed;Higher Ed;*Assoc-voc;Professional Ed;Higher Ed;*Bachelor;Undergraduate;Higher Ed;*College;Undergraduate;Higher Ed;*Doctorate;Graduate;Higher Ed;*HS-grad;High School;Secondary Ed;*Master;Graduate;Higher Ed;*Prof-school;Professional Ed;Higher Ed;*</qidColumnHierarchy>
+    </anonymizeParameterization>
+  </calculationView>
+</calculationViews>
+<logicalModel id="HRDB_VIEW_K_ANON">
+  <attributes>
+    <attribute id="START_YEAR" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="START_YEAR"/>
+      <keyMapping columnObjectName="HRDB_VIEW_K_ANON" columnName="START_YEAR"/>
+    </attribute>
+    <attribute id="ZIP_CODE" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZIP_CODE"/>
+      <keyMapping columnObjectName="HRDB_VIEW_K_ANON" columnName="ZIP_CODE"/>
+    </attribute>
+    <attribute id="GENDER" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GENDER"/>
+      <keyMapping columnObjectName="HRDB_VIEW_K_ANON" columnName="GENDER"/>
+    </attribute>
+    <attribute id="EDUCATION" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EDUCATION"/>
+      <keyMapping columnObjectName="HRDB_VIEW_K_ANON" columnName="EDUCATION"/>
+    </attribute>
+    <attribute id="SALARY" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SALARY"/>
+      <keyMapping columnObjectName="HRDB_VIEW_K_ANON" columnName="SALARY"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="HRDB_VIEW_K_ANON" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="89" y="212"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

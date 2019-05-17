@@ -1,0 +1,14 @@
+namespace VLDBDemo.db;
+
+context tables {
+
+	entity HRDB_TABLE {
+			key "TUPLE_ID": Integer not null;
+			"NAME": String(100);
+			"START_YEAR": String(100);
+			"ZIP_CODE": String(10);
+            "GENDER": String(100);
+            "EDUCATION": String(100);
+			"SALARY": Double;
+    };
+};

@@ -24,11 +24,14 @@ can be used for this purpose.
 Download and Installation
 =========================
 
-The file "VLDBDemo.zip" can simply be imported into the SAP Web IDE by
-clicking "File" -> "Import" -> "File or Project" and selecting it.
-After that, the project must be built by clicking "Build" -> "Build".
-Then, anonymized data can be accessed via the two pre-configured
-calculation views "HRDB_VIEW_DIFF_PRIV" and "HRDB_VIEW_K_ANON".
+From the GitHub repository, download this project by clicking "Clone or
+download" and "Download ZIP".  The file
+"hana-data-anonymization-vldb-demo-master.zip" can then be simply
+imported into the SAP Web IDE by clicking "File" -> "Import" -> "File or
+Project", and selecting it.  After that, the project must be built by
+clicking "Build" -> "Build".  Then, anonymized data can be accessed via
+the two pre-configured calculation views "HRDB_VIEW_DIFF_PRIV" and
+"HRDB_VIEW_K_ANON".
 
 Queries done for analysis of "HRDB_VIEW_DIFF_PRIV" can be found in the
 workspace under "VLDBDemo/DIFF_PRIV_SENSITIVITY.sql" and
